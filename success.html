@@ -1,0 +1,413 @@
+﻿<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mai.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<style>
+    body,html{
+
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+      background-size: cover;
+
+
+	 }
+
+	/* remove outer padding */
+
+	.main .row{
+
+		padding: 0px;
+
+		margin: 0px;
+
+	}
+
+	/*Remove rounded coners*/
+
+
+	nav.sidebar.navbar {
+
+		border-radius: 0px;
+
+	}
+
+
+	nav.sidebar, .main{
+		-webkit-transition: margin 200ms ease-out;
+
+-moz-transition: margin 200ms ease-out;
+
+-o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+
+	}
+
+	/* Add gap to nav and right windows.*/
+
+	.main{
+
+		padding: 10px 10px 0 10px;
+
+	}
+
+	/* .....NavBar: Icon only with coloring/layout.....*/
+
+	/*small/medium side display*/
+	@media (min-width: 768px) {
+
+		/*Allow main to be next to Nav*/
+
+		.main{
+
+			position: absolute;
+
+		width: calc(100% - 40px); /*keeps 100% minus nav size*/
+			margin-left: 40px;
+			float: right;
+		}
+
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 200px;
+		}
+
+		/*Center Brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+
+		}
+		/*Center Brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+
+		}
+
+		/*Center Icons*/
+		nav.sidebar a{
+			padding-right: 13px;
+		}
+
+		/*adds border top to first nav box */
+		nav.sidebar .navbar-nav > li:first-child{
+			border-top: 1px #e5e5e5 solid;
+
+		}
+
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li{
+			border-bottom: 1px #e5e5e5 solid;
+
+		}
+
+		/* Colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+			padding: 0 0px 0 0px;
+		}
+
+		/*colors dropdown box text */
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #ff0000;
+		}
+    .navbar-inverse {
+      background-color: #463050;
+      border-color: #581354;
+      background-image:yt.jpg
+    }
+
+		/*gives sidebar width/height*/
+		nav.sidebar{
+			width: 200px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+      margin-top: 0px;
+		}
+
+		/*give sidebar 100% width;*/
+		nav.sidebar li {
+			width: 100%;
+		}
+
+		/* Move nav to full on mouse over*/
+		nav.sidebar:hover{
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+	}
+
+	/* .....NavBar: Fully showing nav bar..... */
+
+	@media (min-width: 1330px) {
+
+		/*Allow main to be next to Nav*/
+		.main{
+			width: calc(100% - 200px); /*keeps 100% minus nav size*/
+			margin-left: 200px;
+		}
+
+		/*Show all nav*/
+		nav.sidebar{
+			margin-left: 0px;
+			float: left;
+		}
+		/*Show hidden items on nav*/
+		nav.sidebar .forAnimate{
+			opacity: 1;
+		}
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #ff0000;
+		background-color: transparent;
+	}
+
+	nav:hover .forAnimate{
+		opacity: 1;
+	}
+	section{
+		padding-left: 15px;
+	}
+
+.introtest{
+          color:white;
+          font-size: 30px;
+          font-family:inherit;
+
+}
+
+.textbox{
+	 width: 920px;
+
+         padding: 10px;
+         border: 5px solid gray;
+         margin: 0;
+}
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Signika:700,300,600);
+
+html, body { height: 100%; }
+
+
+h1 {
+ font-size:5em;
+ font:bold 7.5vw/1.6 'Signika', sans-serif;
+ user-select:none;
+}
+
+h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+ @keyframes float {
+  0%,100%{ transform:none; }
+  33%{ transform:translateY(-1px) rotate(-2deg); }
+  66%{ transform:translateY(1px) rotate(2deg); }
+}
+body:hover span { animation:bounce .6s; }
+@keyframes bounce {
+  0%,100%{ transform:translate(0); }
+  25%{ transform:rotateX(20deg) translateY(2px) rotate(-3deg); }
+  50%{ transform:translateY(-20px) rotate(3deg) scale(1.1);  }
+}
+
+span:nth-child(4n) { color:hsl(50, 75%, 55%); text-shadow:1px 1px hsl(50, 75%, 45%), 2px 2px hsl(50, 45%, 45%), 3px 3px hsl(50, 45%, 45%), 4px 4px hsl(50, 75%, 45%); }
+span:nth-child(4n-1) { color:hsl(135, 35%, 55%); text-shadow:1px 1px hsl(135, 35%, 45%), 2px 2px hsl(135, 35%, 45%), 3px 3px hsl(135, 35%, 45%), 4px 4px hsl(135, 35%, 45%); }
+span:nth-child(4n-2) { color:hsl(155, 35%, 60%); text-shadow:1px 1px hsl(155, 25%, 50%), 2px 2px hsl(155, 25%, 50%), 3px 3px hsl(155, 25%, 50%), 4px 4px hsl(140, 25%, 50%); }
+span:nth-child(4n-3) { color:hsl(30, 65%, 60%); text-shadow:1px 1px hsl(30, 45%, 50%), 2px 2px hsl(30, 45%, 50%), 3px 3px hsl(30, 45%, 50%), 4px 4px hsl(30, 45%, 50%); }
+
+h1 span:nth-child(2){ animation-delay:.05s; }
+h1 span:nth-child(3){ animation-delay:.1s; }
+h1 span:nth-child(4){ animation-delay:.15s; }
+h1 span:nth-child(5){ animation-delay:.2s; }
+h1 span:nth-child(6){ animation-delay:.25s; }
+h1 span:nth-child(7){ animation-delay:.3s; }
+h1 span:nth-child(8){ animation-delay:.35s; }
+h1 span:nth-child(9){ animation-delay:.4s; }
+h1 span:nth-child(10){ animation-delay:.45s; }
+h1 span:nth-child(11){ animation-delay:.5s; }
+h1 span:nth-child(12){ animation-delay:.55s; }
+h1 span:nth-child(13){ animation-delay:.6s; }
+h1 span:nth-child(14){ animation-delay:.65s; }
+
+</style>
+
+<body>
+<nav class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BLUETOOTH API</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+
+				<<li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
+				<li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+				<li  class="active"><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+        <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<li >
+
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="main">
+<center>
+  <div class="introtest">
+  <h1>Zero To <span>H</span><span>E</span><span>R</span><span>O</span></h1>
+  </div>
+
+<br/><br/></br>
+</center>
+
+<div style="color:#a65959; font-size:30px;" >
+Browser:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Tried executing demo <a href="https://googlechrome.github.io/samples/web-bluetooth/">code(link)</a> on browsers that support web Bluetooth API Chrome, Opera.</li>
+  <li>Issues found during execution that gave no output.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Issues:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Operating system version and browser compatibility issues.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+How we Resolved:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Tried executing same demo code in different versions of windows 10 like Enterprise edition, home basic, patch versions, professional.
+     Its observed that the code works good in Windows 10 Creators Update (version 1703 / build 15063) with polyfill extension has to be added in browser.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Polyfill:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>A polyfill is a browser fallback, made in JavaScript, that allows functionality you expect to work in modern browsers to work in older browsers,
+    e.g., to support Web Bluetooth API related issues in modern browsers.</li>
+</ul>
+</div>
+
+<div style="color:white; font-size:20px;">
+<p><b><i>URL:</i></b><a href="https://github.com/urish/web-bluetooth-polyfill"> https://github.com/urish/web-bluetooth-polyfill </a></p>
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Find version in windows in command prompt winver (To know your version of windows)</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success1:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing the demo code on windows10 Creators update version with Polyfill extension in chrome version63.
+     It worked perfectly on the demo code. All execution is done using Simulator application</p>
+    <p> But Polyfill will work on internet mode and on offline mode it is not possible to get its full feature.
+      So it mandated to search for new platform, such that the code will work on offline mode too.</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success2:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing development code on android platform OS version above M, execution is done using GitHub.
+    It worked perfectly on development code. All execution is done using Simulator application</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success3:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing development Heart¬_Rate code on Ubuntu platform,
+     execution is done using GitHub. It worked perfectly on development code. All execution is done using Simulator application </p>
+</div>
+
+<div style="color:white; font-size:20px;">
+<p><b><i>URL:</i></b><a href="https://niranjan569.github.io/Web-bluetooth-example-Battery-Heart-rate-/"> https://niranjan569.github.io/Web-bluetooth-example-Battery-Heart-rate-/ </a></p>
+</div></br>
+
+
+
+
+<!-- Content Here -->
+</div>
+
+
+
+</body>
+
+<script>
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+</script>
+</hml>

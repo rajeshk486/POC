@@ -1,0 +1,733 @@
+﻿<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mai.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+</head>
+<style>
+    body,html{
+
+		background: url("imgs/dw.jpg") no-repeat center center fixed;
+        background-size: cover;
+
+
+	 }
+
+	/* remove outer padding */
+
+	.main .row{
+
+		padding: 0px;
+
+		margin: 0px;
+
+	}
+
+	/*Remove rounded coners*/
+
+
+	nav.sidebar.navbar {
+
+		border-radius: 0px;
+
+	}
+
+
+	nav.sidebar, .main{
+		-webkit-transition: margin 200ms ease-out;
+
+-moz-transition: margin 200ms ease-out;
+
+-o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+
+	}
+
+	/* Add gap to nav and right windows.*/
+
+	.main{
+
+		padding: 10px 10px 0 10px;
+
+	}
+
+	/* .....NavBar: Icon only with coloring/layout.....*/
+
+	/*small/medium side display*/
+	@media (min-width: 768px) {
+
+		/*Allow main to be next to Nav*/
+
+		.main{
+
+			position: absolute;
+
+		width: calc(100% - 40px); /*keeps 100% minus nav size*/
+			margin-left: 40px;
+			float: right;
+		}
+
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 200px;
+		}
+
+		/*Center Brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+
+		}
+		/*Center Brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+
+		}
+
+		/*Center Icons*/
+		nav.sidebar a{
+			padding-right: 13px;
+		}
+
+		/*adds border top to first nav box */
+		nav.sidebar .navbar-nav > li:first-child{
+			border-top: 1px #e5e5e5 solid;
+
+		}
+
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li{
+			border-bottom: 1px #e5e5e5 solid;
+
+		}
+
+		/* Colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+			padding: 0 0px 0 0px;
+		}
+
+		/*colors dropdown box text */
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #ff0000;
+		}
+    .navbar-inverse {
+      background-color: #463050;
+      border-color:  #463050;
+      background-image:yt.jpg
+    }
+
+		/*gives sidebar width/height*/
+		nav.sidebar{
+			width: 200px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+      margin-top: 0px;
+		}
+
+		/*give sidebar 100% width;*/
+		nav.sidebar li {
+			width: 100%;
+		}
+
+		/* Move nav to full on mouse over*/
+		nav.sidebar:hover{
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+	}
+
+	/* .....NavBar: Fully showing nav bar..... */
+
+	@media (min-width: 1330px) {
+
+		/*Allow main to be next to Nav*/
+		.main{
+			width: calc(100% - 200px); /*keeps 100% minus nav size*/
+			margin-left: 200px;
+		}
+
+		/*Show all nav*/
+		nav.sidebar{
+			margin-left: 0px;
+			float: left;
+		}
+		/*Show hidden items on nav*/
+		nav.sidebar .forAnimate{
+			opacity: 1;
+		}
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #ff0000;
+		background-color: transparent;
+	}
+
+	nav:hover .forAnimate{
+		opacity: 1;
+	}
+	section{
+		padding-left: 15px;
+	}
+
+.introtest{
+          color:#4fddf5;
+          font-size: 30px;
+          font-family:inherit;
+
+}
+
+.textbox{
+	 width: 920px;
+
+         padding: 10px;
+         border: 5px solid gray;
+         margin: 0;
+}
+
+
+
+
+
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
+.carousel-inner
+{
+    background-color:#a09797;
+}
+
+
+.WhiteText
+{
+    color:#daba12;
+}
+
+.YellowText
+{
+    color:#3c6e76;
+}
+
+
+.spacer-md
+{
+    padding-top:50px;
+    padding-bottom:50px;
+}
+
+
+
+
+/* Make the slide sections move at different speeds */
+.slide-delay-1 {
+
+        -webkit-animation-delay: 0.2s;
+        -moz-animation-delay: 0.2s;
+        -o-animation-delay: 0.2s;
+        -ms-animation-delay: 0.2s;
+
+}
+
+.slide-delay-2 {
+
+        -webkit-animation-delay: 0.5s;
+        -moz-animation-delay: 0.5s;
+        -o-animation-delay: 0.5s;
+        -ms-animation-delay: 0.5s;
+
+}
+
+
+
+
+
+
+
+ /* ED MOD */
+
+
+.carousel-inner > .item {
+  display: none;
+  position: relative;
+  -webkit-transition: 0.6s ease-in-out left;
+  transition: 0.6s ease-in-out left;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  line-height: 1;
+}
+.carousel-inner > .active,
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  display: block;
+}
+.carousel-inner > .active {
+  left: 0;
+}
+.carousel-inner > .next,
+.carousel-inner > .prev {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.carousel-inner > .next {
+  left: 100%;
+}
+.carousel-inner > .prev {
+  left: -100%;
+}
+.carousel-inner > .next.left,
+.carousel-inner > .prev.right {
+  left: 0;
+}
+.carousel-inner > .active.left {
+  left: -100%;
+}
+.carousel-inner > .active.right {
+  left: 100%;
+}
+.carousel-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 15%;
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  font-size: 20px;
+  color:  #463050;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-control.left
+{
+
+
+
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #207cca 23%, #207cca 24%, #2989d8 32%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(23%,#207cca), color-stop(24%,#207cca), color-stop(32%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+
+}
+
+
+.carousel-control.right {
+  left: auto;
+  right: 0;
+
+
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top,  #1e5799 0%, #207cca 23%, #207cca 24%, #2989d8 32%, #7db9e8 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#1e5799), color-stop(23%,#207cca), color-stop(24%,#207cca), color-stop(32%,#2989d8), color-stop(100%,#7db9e8)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #1e5799 0%,#207cca 23%,#207cca 24%,#2989d8 32%,#7db9e8 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+
+
+
+}
+
+
+
+
+.carousel-control:hover,
+.carousel-control:focus {
+  outline: none;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-left,
+.carousel-control .glyphicon-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+.carousel-control .icon-prev,
+.carousel-control .glyphicon-chevron-left {
+  left: 50%;
+}
+.carousel-control .icon-next,
+.carousel-control .glyphicon-chevron-right {
+  right: 50%;
+}
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  font-family: serif;
+}
+.carousel-control .icon-prev:before {
+  content: '\2039';
+}
+.carousel-control .icon-next:before {
+  content: '\203a';
+}
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  z-index: 15;
+  width: 60%;
+  margin-left: -30%;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+.carousel-indicators li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px;
+  text-indent: -999px;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #000 \9;
+  background-color: rgba(0, 0, 0, 0);
+}
+.carousel-indicators .active {
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #ffffff;
+}
+.carousel-caption {
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 20px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+}
+.carousel-caption .btn {
+  text-shadow: none;
+}
+@media screen and (min-width: 768px) {
+  .carousel-control .glyphicon-chevron-left,
+  .carousel-control .glyphicon-chevron-right,
+  .carousel-control .icon-prev,
+  .carousel-control .icon-next {
+    width: 30px;
+    height: 30px;
+    margin-top: -15px;
+    margin-left: -15px;
+    font-size: 30px;
+  }
+  .carousel-caption {
+    left: 20%;
+    right: 20%;
+    padding-bottom: 30px;
+  }
+  .carousel-indicators {
+    bottom: 20px;
+  }
+}
+
+.well{
+  min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #463050;
+    border: 1px solid #463050;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+
+}
+
+</style>
+
+<body>
+<nav class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BLUETOOTH API</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
+			<ul class="nav navbar-nav">
+				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+        <li class="active"><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
+        <li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+				<li ><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+        <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="main">
+<center>
+  <div style="color:#7dcbd8; font-size:35px;">
+  Gatt Services
+  </div>
+</br>
+<div style="color:white;" class="textbox">
+</br>
+</br>
+  <p>GATT profiles enable extensive innovation while still maintaining full interoperability with other Bluetooth® devices. The profile describes a use case, roles and general behaviors based on the GATT functionality. Services are collections of characteristics and relationships to other services that encapsulate the behavior of part of a device. This also includes hierarchy of services, characteristics and attributes used in the attribute server.
+</br>
+    GATT is built on top of the Attribute Protocol (ATT) (see Bluetooth Core System Architecture for block diagram and explanations), which uses GATT data to define the way that two Bluetooth Low Energy devices send and receive standard messages. Note that GATT is not used in Bluetooth BR/EDR implementations, which use only adopted profiles.
+   </p>
+</div>
+
+
+</center>
+<br/>
+<br/>
+
+
+
+<div class="container well animated fadeIn">
+    <div class="row-fluid">
+
+        <!-- Carousel -->
+        <div id="my-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="item active">
+                    <div class="container-fluid">
+                        <div class="row spacer-md">
+
+
+                            <div class="col-sm-12 col-md-5 col-md-offset-1">
+
+                                <!-- Slide 1...-->
+                                <div class="animated fadeInLeftBig slide-delay-1">
+                                    <h1 class="WhiteText content-right">GATT SERVICES</h1>
+                                </div>
+
+                                <h3 class="animated fadeInLeftBig slide-delay-2 YellowText">
+                                    A service is composed of characteristics or references to other services. A characteristic consists of a type (represented by a UUID), a value, a set of properties indicating the operations the characteristic supports and a set of permissions relating to security. It may also include one or more descriptors—metadata or configuration flags relating to the owning characteristic.
+                                </h3>
+
+                            </div>
+
+
+                            <div class="col-sm-12 col-md-6">
+                                <div class="animated fadeInRightBig text-center">
+                                    <img src="imgs/gattimage1.png" alt="" class="img-responsive" />
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container-fluid">
+
+                        <div class="row spacer-md">
+
+                            <!-- Slide 2...-->
+                            <div class="col-sm-12 col-md-5 col-md-offset-1">
+                                <img class="img-responsive animated rollIn" src="imgs/popup.png" alt="" />
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+
+                                <div class="content-right animated rotateInDownRight slide-delay-1">
+                                    <h2 class="WhiteText">Uses the excellent animate.css</h2>
+                                </div>
+
+                                <h3 class="animated fadeInUpBig slide-delay-2 YellowText">
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Lorem ipsum dolor sit amet
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Lorem ipsum dolor sit amet
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Lorem ipsum dolor sit amet
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Lorem ipsum dolor sit amet
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="container">
+
+                        <div class="row spacer-md">
+                            <div class="col-sm-12 col-md-5 col-md-offset-1">
+
+                                <!-- Slide 3...-->
+                                <div class="content-left animated bounceInLeft slide-delay-1">
+                                    <h2 class="WhiteText">With some css timed delays on the slides</h2>
+                                </div>
+
+                                <h3 class="animated fadeInUpBig slide-delay-2 YellowText">
+
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Ut rutrum erat non tellus tincidunt
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Ut rutrum erat non tellus tincidunt
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Ut rutrum erat non tellus tincidunt
+                                    <br />
+                                    <i class="glyphicon glyphicon-arrow-right WhiteText"> </i>   Ut rutrum erat non tellus tincidunt
+
+                                </h3>
+                            </div>
+
+                            <div class="col-sm-12 col-md-6">
+                                <img class="img-responsive animated bounceInDown" src="imgs/detectDevices.png" alt="" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- button Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+
+            </ol>
+
+        </div>
+
+
+<div>
+<h2 style="color:#2aec09">  Universally Unique Identifier (UUID):</h2>
+</div>
+<div>
+  <p style="color:#1dc5a8; font-size:15px;">The Bluetooth® Service Discovery Protocol (SDP) specification defines a way to represent a range of UUIDs (which are nominally 128 bits) in a shorter form. A reserved range of 2^32 values can be represented using 32 bits (denoted uuid32). Of these, a sub-range of 2^16 values can be represented using only 16 bits (denoted uuid16).</p>
+  <p style="color:#1dc5a8; font-size:15px;">All values in the 2^32 range that are not assigned in this document are reserved pending future revisions of this document. In other words, no value in this range may be used except as specified in this or future revisions of this document. UUID values outside of this range can be allocated as described in [ISO-11578] for any purpose the allocator desires.</p>
+</div>
+
+
+<div>
+<h2 style="color:#2aec09">  Base Universally Unique Identifier (UUID):</h2>
+</div>
+<div>
+  <p style="color:#1dc5a8; font-size:15px;">The Base UUID is used for calculating 128-bit UUIDs from "short UUIDs" (uuid16 and uuid32) as described in the SDP Specification. See Service Discovery Protocol (SDP) in the Bluetooth Core Specification</p>
+</div
+
+<div>
+<h2 style="color:#2aec09"> Bluetooth_BASE_UUID   :</h2>
+</div>
+<div>
+  <p style="color:#1dc5a8; font-size:15px;">00000000-0000-1000-8000-00805F9B34FB</p>
+</div>
+
+<div>
+<h2 style="color:#2aec09"> Method - 1</h2>
+</div>
+<div>
+  <p style="color:#1dc5a8; font-size:15px;">Conversion of 16 or 32bit UUID to 128bit <br/> <br/>
+
+128_bit_value = 16_bit_value * 2^96 + Bluetooth_Base_UUID <br/>
+128_bit_value = 32_bit_value * 2^96 + Bluetooth_Base_UUID <br/>
+
+A 16-bit UUID may be converted to 32-bit UUID format by zero-extending the 16-bit value to 32-bits. An equivalent method is to add the 16-bit UUID value to a zero-valued 32-bit UUID.
+ </p>
+</div>
+
+<div>
+<h2 style="color:#2aec09"> Method - 2</h2>
+</div>
+<div>
+  <p style="color:#1dc5a8; font-size:15px;">to put it more simply, the 16-bit Attribute UUID replaces the x’s in the following: <br/> <br/>
+
+0000xxxx-0000-1000-8000-00805F9B34FB  <br/>
+In addition, the 32-bit Attribute UUID replaces the x's in the following:  <br/>
+
+xxxxxxxx-0000-1000-8000-00805F9B34FB <br/> <br/>
+
+
+for using any of the method first the 16bit uuid is multiplied with 2^96  (79,22,81,62,51,42,64,30,00,00,00,00,00,000) <br/>
+
+16bit uuid * 2^96 +  00000000-0000-1000-8000-00805F9B34FB</p> <br/>
+</div>
+
+<!-- Content Here -->
+</div>
+
+
+
+</body>
+
+<script>
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+</script>
+</hml>

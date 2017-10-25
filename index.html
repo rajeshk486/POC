@@ -1,0 +1,645 @@
+﻿<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mai.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+</head>
+<style>
+    body,html{
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+
+
+      background-size: cover;
+
+
+
+	 }
+
+	/* remove outer padding */
+
+	.main .row{
+
+		padding: 0px;
+
+		margin: 0px;
+
+	}
+
+	/*Remove rounded coners*/
+
+
+	nav.sidebar.navbar {
+
+		border-radius: 0px;
+
+	}
+
+
+	nav.sidebar, .main{
+		-webkit-transition: margin 200ms ease-out;
+
+-moz-transition: margin 200ms ease-out;
+
+-o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+
+	}
+
+	/* Add gap to nav and right windows.*/
+
+	.main{
+
+		padding: 10px 10px 0 10px;
+
+	}
+
+	/* .....NavBar: Icon only with coloring/layout.....*/
+
+	/*small/medium side display*/
+	@media (min-width: 768px) {
+
+		/*Allow main to be next to Nav*/
+
+		.main{
+
+			position: absolute;
+
+		width: calc(100% - 40px); /*keeps 100% minus nav size*/
+			margin-left: 40px;
+			float: right;
+		}
+
+		/*lets nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 200px;
+		}
+
+		/*Center Brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+
+		}
+		/*Center Brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+
+		}
+
+		/*Center Icons*/
+		nav.sidebar a{
+			padding-right: 13px;
+		}
+
+		/*adds border top to first nav box */
+		nav.sidebar .navbar-nav > li:first-child{
+			border-top: 1px #e5e5e5 solid;
+
+		}
+
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li{
+			border-bottom: 1px #e5e5e5 solid;
+
+		}
+
+		/* Colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+			padding: 0 0px 0 0px;
+		}
+
+		/*colors dropdown box text */
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #ff0000;
+		}
+    .navbar-inverse {
+      background-color: #463050;
+
+      border-color:#463050;
+      background-image:yt.jpg
+    }
+
+		/*gives sidebar width/height*/
+		nav.sidebar{
+			width: 200px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+      margin-top: 0px;
+		}
+
+		/*give sidebar 100% width;*/
+		nav.sidebar li {
+			width: 100%;
+		}
+
+		/* Move nav to full on mouse over*/
+		nav.sidebar:hover{
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+	}
+
+	/* .....NavBar: Fully showing nav bar..... */
+
+	@media (min-width: 1330px) {
+
+		/*Allow main to be next to Nav*/
+		.main{
+			width: calc(100% - 200px); /*keeps 100% minus nav size*/
+			margin-left: 200px;
+		}
+
+		/*Show all nav*/
+		nav.sidebar{
+			margin-left: 0px;
+			float: left;
+		}
+		/*Show hidden items on nav*/
+		nav.sidebar .forAnimate{
+			opacity: 1;
+		}
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #ff0000;
+		background-color: transparent;
+	}
+
+	nav:hover .forAnimate{
+		opacity: 1;
+	}
+	section{
+		padding-left: 15px;
+	}
+
+.introtest{
+          color:white;
+          font-size: 30px;
+          font-family:inherit;
+
+}
+
+.textbox{
+	 width: 920px;
+
+         padding: 10px;
+         border: 5px solid gray;
+         margin: 0;
+}
+
+
+.cssload-preloader {
+	font-family: Arial, Tahoma;
+	position: absolute;
+	top : -870px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 10;
+	display: box;
+		display: -o-box;
+		display: -ms-box;
+		display: -webkit-box;
+		display: -moz-box;
+	display: flex;
+		display: -o-flex;
+		display: -ms-flex;
+		display: -webkit-flex;
+		display: -moz-flex;
+	box-pack: center;
+		-o-box-pack: center;
+		-ms-box-pack: center;
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+	justify-content: center;
+		-o-justify-content: center;
+		-ms-justify-content: center;
+		-webkit-justify-content: center;
+		-moz-justify-content: center;
+	box-align: center;
+		-o-box-align: center;
+		-ms-box-align: center;
+		-webkit-box-align: center;
+		-moz-box-align: center;
+	align-items: center;
+		-o-align-items: center;
+		-ms-align-items: center;
+		-webkit-align-items: center;
+		-moz-align-items: center;
+	transform-style: preserve-3d;
+		-o-transform-style: preserve-3d;
+		-ms-transform-style: preserve-3d;
+		-webkit-transform-style: preserve-3d;
+		-moz-transform-style: preserve-3d;
+	perspective: 487px;
+		-o-perspective: 487px;
+		-ms-perspective: 487px;
+		-webkit-perspective: 487px;
+		-moz-perspective: 487px;
+	overflow: hidden;
+	animation: wobble 5.75s ease-in-out infinite;
+		-o-animation: wobble 5.75s ease-in-out infinite;
+		-ms-animation: wobble 5.75s ease-in-out infinite;
+		-webkit-animation: wobble 5.75s ease-in-out infinite;
+		-moz-animation: wobble 5.75s ease-in-out infinite;
+	padding-bottom: 2em;
+}
+
+
+.cssload-preloader > span {
+	font-size: 49px;
+	animation: 5.75s ease-in-out infinite;
+		-o-animation: 5.75s ease-in-out infinite;
+		-ms-animation: 5.75s ease-in-out infinite;
+		-webkit-animation: 5.75s ease-in-out infinite;
+		-moz-animation: 5.75s ease-in-out infinite;
+	color: transparent;
+	text-shadow: 0 0 0px rgb(0,0,0);
+}
+span:nth-child(-n+3) {
+	animation-delay: -2.88s;
+		-o-animation-delay: -2.88s;
+		-ms-animation-delay: -2.88s;
+		-webkit-animation-delay: -2.88s;
+		-moz-animation-delay: -2.88s;
+}
+
+span:nth-child(1),
+span:nth-last-child(1) {
+	animation-name: blur-1;
+		-o-animation-name: blur-1;
+		-ms-animation-name: blur-1;
+		-webkit-animation-name: blur-1;
+		-moz-animation-name: blur-1;
+}
+
+
+
+span:nth-child(2),
+span:nth-last-child(2) {
+	animation-name: blur-2;
+		-o-animation-name: blur-2;
+		-ms-animation-name: blur-2;
+		-webkit-animation-name: blur-2;
+		-moz-animation-name: blur-2;
+}
+
+
+
+span:nth-child(3),
+span:nth-last-child(3) {
+	animation-name: blur-3;
+		-o-animation-name: blur-3;
+		-ms-animation-name: blur-3;
+		-webkit-animation-name: blur-3;
+		-moz-animation-name: blur-3;
+}
+
+
+
+
+
+
+@keyframes blur-1 {
+	50% {
+		text-shadow: 0 0 0.15em rgb(0,0,0);
+	}
+}
+
+@-o-keyframes blur-1 {
+	50% {
+		text-shadow: 0 0 0.15em rgb(0,0,0);
+	}
+}
+
+@-ms-keyframes blur-1 {
+	50% {
+		text-shadow: 0 0 0.15em rgb(0,0,0);
+	}
+}
+
+@-webkit-keyframes blur-1 {
+	50% {
+		text-shadow: 0 0 0.15em rgb(0,0,0);
+	}
+}
+
+@-moz-keyframes blur-1 {
+	50% {
+		text-shadow: 0 0 0.15em rgb(0,0,0);
+	}
+}
+
+@keyframes blur-2 {
+	50% {
+		text-shadow: 0 0 0.075em rgb(0,0,0);
+	}
+}
+
+@-o-keyframes blur-2 {
+	50% {
+		text-shadow: 0 0 0.075em rgb(0,0,0);
+	}
+}
+
+@-ms-keyframes blur-2 {
+	50% {
+		text-shadow: 0 0 0.075em rgb(0,0,0);
+	}
+}
+
+@-webkit-keyframes blur-2 {
+	50% {
+		text-shadow: 0 0 0.075em rgb(0,0,0);
+	}
+}
+
+@-moz-keyframes blur-2 {
+	50% {
+		text-shadow: 0 0 0.075em rgb(0,0,0);
+	}
+}
+
+@keyframes blur-3 {
+	50% {
+		text-shadow: 0 0 0.05em rgb(0,0,0);
+	}
+}
+
+@-o-keyframes blur-3 {
+	50% {
+		text-shadow: 0 0 0.05em rgb(0,0,0);
+	}
+}
+
+@-ms-keyframes blur-3 {
+	50% {
+		text-shadow: 0 0 0.05em rgb(0,0,0);
+	}
+}
+
+@-webkit-keyframes blur-3 {
+	50% {
+		text-shadow: 0 0 0.05em rgb(0,0,0);
+	}
+}
+
+@-moz-keyframes blur-3 {
+	50% {
+		text-shadow: 0 0 0.05em rgb(0,0,0);
+	}
+}
+
+@keyframes wobble {
+	from, to {
+		transform: rotateY(-45deg);
+	}
+	50% {
+		transform: rotateY(45deg);
+	}
+}
+
+@-o-keyframes wobble {
+	from, to {
+		-o-transform: rotateY(-45deg);
+	}
+	50% {
+		-o-transform: rotateY(45deg);
+	}
+}
+
+@-ms-keyframes wobble {
+	from, to {
+		-ms-transform: rotateY(-45deg);
+	}
+	50% {
+		-ms-transform: rotateY(45deg);
+	}
+}
+
+@-webkit-keyframes wobble {
+	from, to {
+		-webkit-transform: rotateY(-45deg);
+	}
+	50% {
+		-webkit-transform: rotateY(45deg);
+	}
+}
+
+@-moz-keyframes wobble {
+	from, to {
+		-moz-transform: rotateY(-45deg);
+	}
+	50% {
+		-moz-transform: rotateY(45deg);
+	}
+}
+
+
+
+.semi-transparent-button {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 8px;
+  width: 70%;
+  max-width: 200px;
+  background: #fff; /* fallback color for old browsers */
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-out;
+}
+
+</style>
+
+<body>
+<nav class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BLUETOOTH API</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-Link"></span></a></li>
+
+
+        <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
+				<li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+
+				<li><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+        <li><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="main">
+<center>
+
+    <div class="cssload-preloader">
+
+  		<span>B</span>
+  		<span>L</span>
+  		<span>U</span>
+  		<span>E</span>
+  		<span>T</span>
+  		<span>O</span>
+      <span>O</span>
+  		<span>T</span>
+  		<span>H</span>
+&nbsp
+      <span>W</span>
+  		<span>E</span>
+  		<span>B</span>
+
+  		<span>A</span>
+  		<span>P</span>
+  		<span>I</span>
+
+  </div>
+
+</br>
+</br>
+</br>
+</br></br>
+
+<div style="color:white;" class="textbo">
+
+   <h3>Our Main Aim is<h3>
+
+  <h1>Interact with Bluetooth devices using Web Browser<h1>
+</div>
+</center>
+<br/>
+<div style="color:#a65959; font-size:25px;">
+  Before we start:
+</div>
+</br>
+<div style="color:white; font-size:15px;">
+   Just think that you can interact with your BLE devices with your Web Broswers without installing any S/W (Zero FootPrint). Yes its possible with <i><b>Web Bluetooth APi</b></i> provided by Chrome Browser.
+   <br>Your basic knowledge on Bluetooth Low Energy (BLE) and the Generic Attribute Profile (GATT) is enough to achive this.
+</div>
+</br>
+<div style="color:white; font-size:15px;">
+  Chrome Bluetooth API is on Beta mode and many enthusiastic developers are supporting the same to give a complete package.
+  </div>
+</br>
+<div style="color:white; font-size:15px;">
+<ul>
+  A subset of the Web Bluetooth API is available from <b><i> Chrome 56 for Chrome OS, Chrome for Android M, and Mac,Windows</b></i>.
+  This means you should be able to
+<li>  request and connect to nearby Bluetooth devices, </li>
+<li>  read/write Bluetooth characteristics, </li>
+<li>  receive GATT Notifications,</li>
+  <li>know when a Bluetooth device gets disconnected,and even</li>
+  <li>read and write to Bluetooth descriptors.</li>
+</li>
+</ul>
+</div>
+
+</br>
+
+
+<div style="color:#a65959; font-size:25px;">POC:</div> </br>
+<div style="color:white; font-size:15px;">
+  It is a small possbility check that how to interact this Web Bluetooth Api with BLE enabled device(smart phone, Glucometer, Fitness tracker).
+  The web browsers are enabled with Web Bluetooth package and a smart BLE device(glucometer, fitness band or smart phone) are connected through BLE protocol.
+  Then this browser will connect to the GATT server of the target device. Since its a smart device, it should have pre defined services running. Through code we are going to use this service, such a way that information on the device will be transfered to the browser.
+
+</div> </br>
+
+<div style="color:#a65959; font-size:25px;">Bluetooth Low Energy (BLE):</div>
+<div style="color:white; font-size:15px;">
+</br>
+  Bluetooth Low Energy is a wireless personal area network technology developed for healthcare, fitness, beacons, security, and home entertainment industries.
+  <p> BLE is used in smart medical devices to track on the usage of the device and hence it directly helps the patient health.
+    <br>
+  <br>Why BLE? It consumes least amount of battery and works with high efficency.</p>
+  <p>People with chronic medical conditions, like diabetes, it’s very important to take regular blood glucose readings,
+  and keep accurate notes.  Patients must log what their blood sugar level is, when they take insulin and the amount.
+   Low-cost BLE devices in this dosing device and in the instrument will do all this logging for the patient, and, with consent,
+   share this information with the doctor.  This could revolutionize the quality of such a patient’s healthcare management. </p>
+
+</div> </br>
+
+
+<div>
+ <a href="https://www.eetimes.com/document.asp?doc_id=1278968">https://www.eetimes.com/document.asp?doc_id=1278968</a>
+</div> </br>
+
+<div>
+</br>
+</br>
+  <a class="btn btn-primary" href="intro.html">Get Start</a>
+</div>
+
+  <!-- Content Here -->
+</div>
+
+
+
+</body>
+
+<script>
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+</script>
+</hml>

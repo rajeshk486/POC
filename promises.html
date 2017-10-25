@@ -1,0 +1,472 @@
+﻿<html>
+<head>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/mai.css">
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:700' rel='stylesheet' type='text/css'>
+</head>
+<style>
+    body,html{
+
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+      background-size: cover;
+	 }
+
+	/* remove outer padding */
+
+	.main .row{
+
+		padding: 0px;
+
+		margin: 0px;
+
+	}
+
+	/*Remove rounded coners*/
+
+
+	nav.sidebar.navbar {
+
+		border-radius: 0px;
+
+	}
+
+
+	nav.sidebar, .main{
+		-webkit-transition: margin 200ms ease-out;
+
+-moz-transition: margin 200ms ease-out;
+
+-o-transition: margin 200ms ease-out;
+	    transition: margin 200ms ease-out;
+
+	}
+
+	/* Add gap to nav and right windows.*/
+
+	.main{
+
+		padding: 10px 10px 0 10px;
+
+	}
+
+	/* .....NavBar: Icon only with coloring/layout.....*/
+
+	/*small/medium side display*/
+	@media (min-width: 768px) {
+
+		/*Allow main to be next to Nav*/
+
+		.main{
+
+			position: absolute;
+
+		width: calc(100% - 40px); /*keeps 100% minus nav size*/
+			margin-left: 40px;
+			float: right;
+		}
+
+		/*nav bar to be showed on mouseover*/
+		nav.sidebar:hover + .main{
+			margin-left: 200px;
+		}
+
+		/*Center Brand*/
+		nav.sidebar.navbar.sidebar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+			margin-left: 0px;
+
+		}
+		/*Center Brand*/
+		nav.sidebar .navbar-brand, nav.sidebar .navbar-header{
+			text-align: center;
+			width: 100%;
+			margin-left: 0px;
+
+		}
+
+		/*Center Icons*/
+		nav.sidebar a{
+			padding-right: 13px;
+		}
+
+		/*adds border top to first nav box */
+		nav.sidebar .navbar-nav > li:first-child{
+			border-top: 1px #e5e5e5 solid;
+
+		}
+
+		/*adds border to bottom nav boxes*/
+		nav.sidebar .navbar-nav > li{
+			border-bottom: 1px #e5e5e5 solid;
+
+		}
+
+		/* Colors/style dropdown box*/
+		nav.sidebar .navbar-nav .open .dropdown-menu {
+			position: static;
+			float: none;
+			width: auto;
+			margin-top: 0;
+			background-color: transparent;
+			border: 0;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+
+		/*allows nav box to use 100% width*/
+		nav.sidebar .navbar-collapse, nav.sidebar .container-fluid{
+			padding: 0 0px 0 0px;
+		}
+
+		/*colors dropdown box text */
+		.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+			color: #ff0000;
+		}
+    .navbar-inverse {
+      background-color: #463050;
+      border-color: #581354;
+      background-image:yt.jpg
+    }
+
+		/*gives sidebar width/height*/
+		nav.sidebar{
+			width: 200px;
+			height: 100%;
+			margin-left: -160px;
+			float: left;
+			z-index: 8000;
+			margin-bottom: 0px;
+      margin-top: 0px;
+		}
+
+		/*give sidebar 100% width;*/
+		nav.sidebar li {
+			width: 100%;
+		}
+
+		/* Move nav to full on mouse over*/
+		nav.sidebar:hover{
+			margin-left: 0px;
+		}
+		/*for hiden things when navbar hidden*/
+		.forAnimate{
+			opacity: 0;
+		}
+	}
+
+	/* .....NavBar: Fully showing nav bar..... */
+
+	@media (min-width: 1330px) {
+
+		/*Allow main to be next to Nav*/
+		.main{
+			width: calc(100% - 200px); /*keeps 100% minus nav size*/
+			margin-left: 200px;
+		}
+
+		/*Show all nav*/
+		nav.sidebar{
+			margin-left: 0px;
+			float: left;
+		}
+		/*Show hidden items on nav*/
+		nav.sidebar .forAnimate{
+			opacity: 1;
+		}
+	}
+
+	nav.sidebar .navbar-nav .open .dropdown-menu>li>a:hover, nav.sidebar .navbar-nav .open .dropdown-menu>li>a:focus {
+		color: #ff0000;
+		background-color: transparent;
+	}
+
+	nav:hover .forAnimate{
+		opacity: 1;
+	}
+	section{
+		padding-left: 15px;
+	}
+
+.introtest{
+          color:white;
+          font-size: 30px;
+          font-family:inherit;
+
+}
+
+.textbox{
+	 width: 920px;
+
+         padding: 10px;
+         border: 5px solid gray;
+         margin: 0;
+}
+
+
+
+
+
+
+svg
+{
+  position absolute
+  top 50%
+  margin-top -60px
+  left 50%
+  margin-left -225px
+}
+
+
+</style>
+
+<body>
+<nav class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">BLUETOOTH API</a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
+			<ul class="nav navbar-nav">
+				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li  class="active"><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
+          <li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+  				<li ><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+          <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+
+
+
+
+
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="main">
+<center>
+  <div class="introtest">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="680px" height="150px" xml:space="preserve">
+      <defs>
+        <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+          <path fill="#000" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z"/>
+        </pattern>
+
+        <text id="text" transform="translate(2,116)" font-family="'Cabin Condensed'" font-size="161.047">PROMISES</text>
+
+        <mask id="text-mask">
+          <use x="0" y="0" xlink:href="#text" opacity="1" fill="#ffffff"/>
+        </mask>
+
+        <g id="eff">
+          <use x="0" y="0" xlink:href="#text" fill="#a2a3a5"/>
+
+      <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" x="-300" y="50" width="1200" height="120" opacity="0.3">
+        <animate attributeType="xml" attributeName="x" from="-300" to="0" repeatCount="indefinite" dur="2s"/>
+      </rect>
+       <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="45" width="1600" height="120" opacity="0.3">
+        <animate attributeType="xml" attributeName="x" from="-400" to="0" repeatCount="indefinite" dur="3s"/>
+      </rect>
+
+      <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="55" width="800" height="120" opacity="0.3">
+        <animate attributeType="xml" attributeName="x" from="-200" to="0" repeatCount="indefinite" dur="1.4s"/>
+      </rect>
+          <rect class="water-fill" mask="url(#text-mask)" fill="url(#water)" y="55" width="2000" height="120" opacity="0.3">
+        <animate attributeType="xml" attributeName="x" from="-500" to="0" repeatCount="indefinite" dur="2.8s"/>
+      </rect>
+        </g>
+      </defs>
+
+          <use xlink:href="#eff" opacity="0.9" style="mix-blend-mode:color-burn"/>
+
+    </svg>
+  </div>
+</center>
+
+<div style="color:#a65959; font-size:30px;">
+  What is a promise?
+</div> </br>
+<div style="color:white; font-size:15px;">
+  <p>A Promise is an object representing the eventual completion or failure of an asynchronous operation. A promise may be created using its constructor.
+     However, most people are consumers of already-created promises returned from functions</p>
+  <p>Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.</p>
+</div>
+
+</br>
+
+
+<div style="color:#a65959; font-size:30px;">
+<h3>Real Time Example</h3>
+</div>
+</br>
+<div style="color:white; font-size:15px;">
+  Imagine you are a kid. Your mom promises you that she'll get you a new phone next week."
+  You don't know if you will get that phone until next week. Your mom can either really buy you a brand new phone, or stand you up and withhold the phone if she is not happy
+  That is a promise. A promise has 3 states. They are:
+   Promise is pending: You don't know if you will get that phone until next week.
+  Promise is resolved: Your mom really buy you a brand new phone.
+  Promise is rejected: You don't get a new phone because your mom is not happy.
+</div> </br>
+
+<div style="color:#a65959; font-size:30px;" >
+  Example
+</div></br>
+<div style="color:white; font-size:15px;">
+<p>Old-style function that expects two callbacks, and calls one of them on eventual completion or failure:</p>
+</div>
+
+<div>
+  <pre><code>function successCallback(result) {
+  console.log("It succeeded with " + result);
+}
+
+function failureCallback(error) {
+  console.log("It failed with " + error);
+}
+
+doSomething(successCallback, failureCallback);
+</pre></code>
+</div> </br>
+
+
+<div style="color:white; font-size:15px;">
+  <p>  Modern functions return a promise you can attach your callbacks to instead:</p>
+</div>
+
+<div>
+  <pre><code>let promise = doSomething();
+promise.then(successCallback, failureCallback);</pre></code>
+</div>
+
+<div style="color:white; font-size:15px;">
+<p>…or simply: </p>
+</div>
+
+<div>
+  <pre><code>doSomething().then(successCallback, failureCallback);
+</pre></code>
+</div> <br>
+
+
+
+
+
+
+
+
+
+
+
+<div style="color:#a65959; font-size:30px;" >
+Why Promises:
+</div></br>
+<div style="color:white; font-size:15px;">
+  Unlike old-style passed-in callbacks, a promise comes with some guarantees:
+<ul>
+  <li>Callbacks will never be called before the completion of the current run of the JavaScript event loop.</li>
+  <li>Callbacks added with .then even after the success or failure of the asynchronous operation, will be called, as above.</li>
+  <li>Multiple callbacks may be added by calling .then several times, to be executed independently in insertion order.</li>
+</ul>
+But the most immediate benefit of promises is chaining.
+</div><br/>
+
+
+<div style="color:#a65959; font-size:30px;" >
+Promises in Web Bluetooth API:
+</div></br>
+<div>
+  <pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+  .then(device => { /* ... */ })
+  .catch(error => { console.log(error); });
+</pre></code>
+</div>
+<div style="color:white; font-size:15px;">
+  <p>In this requestDevice() will return a device promise which will have device info. Similarly it have many methods like getService(), getCharacteristic() etc  which will return promises.</p>
+</div>
+<div style="color:white; font-size:15px;">
+<h3>  We can check the promiseStatus, promiseValue in console of browser. </h3>
+</div>
+<div>
+  <img src="imgs/promisesimg.gif"/>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Reference Links:
+</div></br>
+<div>
+  <div style="color:#996666; font-size:20px;">
+<a href="https://developers.google.com/web/fundamentals/primers/promises#promises_arrive_in_javascript">https://developers.google.com/web/fundamentals/primers/promises#promises_arrive_in_javascript</a></br>
+<a href="https://scotch.io/tutorials/javascript-promises-for-dummies">https://scotch.io/tutorials/javascript-promises-for-dummies</a> </br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises</a> </br>
+</div>
+
+
+<!-- Content Here -->
+</div>
+
+
+
+</body>
+
+<script>
+    function htmlbodyHeightUpdate(){
+		var height3 = $( window ).height()
+		var height1 = $('.nav').height()+50
+		height2 = $('.main').height()
+		if(height2 > height3){
+			$('html').height(Math.max(height1,height3,height2)+10);
+			$('body').height(Math.max(height1,height3,height2)+10);
+		}
+		else
+		{
+			$('html').height(Math.max(height1,height3,height2));
+			$('body').height(Math.max(height1,height3,height2));
+		}
+
+	}
+	$(document).ready(function () {
+		htmlbodyHeightUpdate()
+		$( window ).resize(function() {
+			htmlbodyHeightUpdate()
+		});
+		$( window ).scroll(function() {
+			height2 = $('.main').height()
+  			htmlbodyHeightUpdate()
+		});
+	});
+
+
+
+
+  $(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+    $('.nav-tabs a').on('shown.bs.tab', function(event){
+        var x = $(event.target).text();         // active tab
+        var y = $(event.relatedTarget).text();  // previous tab
+        $(".act span").text(x);
+        $(".prev span").text(y);
+    });
+});
+</script>
+</hml>
