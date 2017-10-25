@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" >
+</head>
+<body>
+<style type="text/css">
+	html,body{
+		height: 100%;
+		margin: 0px;
+		font-family: sans-serif;
+		background-color: #0077b8;
+
+	}
+	.screen1{
+		background:url(images/bluetoothlogo4.jpg) no-repeat center center;
+		background-size: cover;
+		height: 100%;
+		padding: 100px 0px 0px 0px;
+	}
+	.screen2{
+		background:#1a87c5 url(images/wave3.gif) no-repeat center center;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		display: none;
+	}
+		.screen3{
+		background:#0077b8;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		display: none;
+	}
+	.screen3 h3{
+		text-align: center;
+		color: white;
+	}
+	.devices .list-group-item{
+		transition: all .3s ease;
+		position: relative;
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.devices{
+		position: absolute;
+	  left: 50%;
+	  top: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	}
+
+
+	.devices.active .list-group-item:nth-child(1){
+		transition-delay: 1s;
+	}
+	.devices.active .list-group-item:nth-child(2){
+		transition-delay: 2s;
+	}
+
+	.devices.active .list-group-item:nth-child(3){
+		transition-delay: 3s;
+	}
+	.devices.active .list-group-item:nth-child(4){
+		transition-delay: 4s;
+	}
+	.devices.active .list-group-item:nth-child(5){
+		transition-delay: 5s;
+	}
+
+	.devices.active .list-group-item:nth-child(6){
+		transition-delay: 6s;
+	}
+
+	.devices.active .list-group-item:nth-child(7){
+		transition-delay: 7s;
+	}
+	.devices.active .list-group-item:nth-child(8){
+		transition-delay: 8s;
+	}
+
+	.devices.active .list-group-item:nth-child(9){
+		transition-delay: 9s;
+	}
+
+
+
+
+	.devices.active .list-group-item{
+		opacity: 1;
+		visibility: visible;
+
+
+	}
+
+	.screen4{
+		background:#0077b8;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		display: none;
+		padding:50px 20px;
+	}
+	.screen5{
+		background:#0077b8;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		display: none;
+		padding:50px 20px;
+	}
+	.screen5 h3,.screen5 h4{
+		color: #fff;
+		text-align: center;
+	}
+
+		.screen6{
+		background:#0077b8;
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		z-index: 999;
+		display: none;
+		color: #fff;
+		text-align: center;
+		font-size:30px;
+		padding:50px 20px;
+	}
+
+.centerclass {
+	bottom: 12%;
+	position: absolute;
+	right: 38%;
+	color: white;
+	font-size:25px;
+}
+
+.algn{
+
+	margin-top:83px;
+
+	color:red;
+
+}
+
+.button {
+	background-color: #323232;
+	height: 50px;
+	width: 250px;
+	border-radius: 10px;
+	margin-right: 5px;
+	text-align: center;
+	color: white;
+	padding-top: 25px;
+	font-size:17px;
+	font-weight: bold;
+	display: inline-block;
+}
+
+.button:active{
+	background-color: rgb(140, 141,142);
+}
+
+#meter {
+	border: 5px solid white;
+	width: 650px;
+	margin-left: 25%;
+	background-color: rgb(50,50,50);
+	border-radius: 50px;
+}
+.progress {
+	margin-left:15%;
+	width:600px;
+}
+
+
+.progresstext{
+	margin-left:50px;
+	margin-top:10px;
+	color:white;
+	font-size:25px;
+}
+
+.progresschange{
+	margin-left:50px;
+	margin-top:10px;
+	color:white;
+	font-size:25px;
+
+}
+
+
+
+</style>
+
+<div class="screen1">
+	 <div class="container">
+	 	 <marquee direction="right"   style="color:RoyalBlue" ><h1>Bluetooth Services</h1></marquee>
+		<button type="button" onclick="onButtonClick()" class="btn btn-lg detecting" style="background: transparent; color: #F2F2F2;  border-radius: 4px; padding: 15px 32px; borde: 2px solid #e7e7e7; font-size: 26px; ">Get batteryLevel</button>
+		<button type="button" onclick="onButtonClick1()" class="btn btn-lg detecting" style="background: transparent; color: #F2F2F2;  border-radius: 4px; padding: 15px 32px; borde: 2px solid #e7e7e7; font-size: 26px; ">Get heart rate</button>
+
+	 </div>
+</div>
+<div class="screen2">
+
+	<div class="centerclass">
+	</br>
+</br>
+Searching  For  Devices........
+</div>
+
+</div>
+<div class="screen3">
+	<div class="container">
+<h3>Click below to get battery status of selected device</h3>
+		<div class="list-group devices">
+<a class="list-group-item"><div class="getButton"></div></a>
+		</div>
+	</div>
+</div>
+<div class="screen5">
+<div class="container">
+		<h3>Please Wait...........</h3>
+<h4>Your Request is Processing......</h4>
+<br/>
+<br/>
+<br/>
+<div class="count"></div>
+<div class="progress">
+  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:50;">
+    progress
+  </div>
+</div>
+</div>
+
+<div>
+	<h3>connecting.....</h3>
+</div>
+	</div>
+<div class="screen6">
+	<div class="container devices">
+		<h2>Device Information : -</h2><br>
+		<div class="deviceName">Name</div><br>
+		<div class="deviceId"></div><br>
+		<div class="battery"></div><br>
+  </div>
+</div>
+<!-- Latest compiled and minified JS -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript">
+function onButtonClick() {
+	console.log('Requesting Bluetooth Device...');
+	navigator.bluetooth.requestDevice(
+	{filters: [{services: ['battery_service']}]})
+	.then(device => {
+		$(".deviceName").text("Device Name:"+device.name);
+		$(".deviceId").text("DeviceId:"+device.id);
+		$(".getButton").text("Get Battery Level");
+		console.log('Connecting to GATT Server...');
+		return device.gatt.connect();
+	})
+	.then(server => {
+		console.log('Getting Battery Service...');
+		return server.getPrimaryService('battery_service');
+	})
+	.then(service => {
+		console.log('Getting Battery Level Characteristic...');
+		return service.getCharacteristic('battery_level');
+	})
+	.then(characteristic => {
+		console.log('Reading Battery Level...');
+		return characteristic.readValue();
+	})
+	.then(value => {
+		let batteryLevel = value.getUint8(0);
+		$(".battery").text(' Battery Level is ' + batteryLevel + '%');
+		console.log(' Battery Level is ' + batteryLevel + '%');
+	})
+	.catch(error => {
+		console.log('Argh! ' + error);
+	});
+}
+
+function onButtonClick1() {
+	console.log('Requesting Bluetooth Device...');
+	navigator.bluetooth.requestDevice(
+	{filters: [{services: ['heart_rate']}]})
+	.then(device => {
+		$(".deviceName").text("Device Name:"+device.name);
+		$(".deviceId").text("DeviceId:"+device.id);
+		$(".getButton").text("Get Heart rate");
+		console.log('Connecting to GATT Server...');
+		return device.gatt.connect();
+	})
+	.then(server => {
+		console.log('Getting Heart rate  Service...');
+		return server.getPrimaryService('heart_rate');
+	})
+	.then(service => {
+		console.log('Getting Heart rate Characteristic...');
+		return service.getCharacteristic('heart_rate_measurement');
+	})
+	.then(characteristic => {
+		console.log('Starting notifications...');
+		characteristic.startNotifications();
+		console.log('Notifications started...');
+		characteristic.addEventListener('characteristicvaluechanged',handleCharacteristicValueChanged);
+		$(".battery").text('Heart_rate_measurment value is ' + '0');
+		console.log('Heart_rate_measurment value is ' + '50');
+	})
+	.catch(error => {
+		console.log('Argh! ' + error);
+	});
+}
+function handleCharacteristicValueChanged(event) {
+  var value = parseHeartRate(event.target.value);
+  console.log('Heart_rate_measurment value is ' + value.heartRate+'Energy expended is '+value.energyExpended);
+  document.querySelector('.battery').innerHTML = 'Heart_rate_measurment value is ' + value.heartRate+ '<br>Energy expended is '+value.energyExpended;
+}
+function parseHeartRate(value) {
+      value = value.buffer ? value : new DataView(value);
+      let flags = value.getUint8(0);
+      let rate16Bits = flags & 0x1;
+      let result = {};
+      let index = 1;
+      if (rate16Bits) {
+        result.heartRate = value.getUint16(index, /*littleEndian=*/true);
+        index += 2;
+      } else {
+        result.heartRate = value.getUint8(index);
+        index += 1;
+      }
+      let contactDetected = flags & 0x2;
+      let contactSensorPresent = flags & 0x4;
+      if (contactSensorPresent) {
+        result.contactDetected = !!contactDetected;
+      }
+      let energyPresent = flags & 0x8;
+      if (energyPresent) {
+        result.energyExpended = value.getUint16(index, /*littleEndian=*/true);
+        index += 2;
+      }
+      let rrIntervalPresent = flags & 0x10;
+      if (rrIntervalPresent) {
+        let rrIntervals = [];
+        for (; index + 1 < value.byteLength; index += 2) {
+          rrIntervals.push(value.getUint16(index, /*littleEndian=*/true));
+        }
+        result.rrIntervals = rrIntervals;
+      }
+      return result;
+    }
+
+	$(".detecting").on("click",function(){
+    $(".screen2").fadeIn();
+    setTimeout(function(){$(".screen2").fadeOut();}, 6000);
+    setTimeout(function(){
+    	$(".screen3").fadeIn();
+    	$(".devices").addClass('active');
+    }, 3000);
+	});
+	$(".list-group-item").on("click",function(){
+        $(".screen3").fadeOut();
+		$(".screen5").fadeIn();
+		$("[name='Devicename']").val($(this).text());
+		var count = 0;
+
+		interval = setInterval(function(){
+
+			count = count + 20;
+
+			$(".progress .progress-bar").html(count+"%");
+			$(".progress .progress-bar").css({"width":count+"%"});
+
+			if (count == 100) {
+				clearInterval(interval);
+				$(".screen6").fadeIn();
+				setTimeout(function(){
+					$(".screen5").fadeOut();
+				}, 2000);
+			}
+
+		},1000);
+
+	});
+
+</script>
+
+</body>
+</html>
