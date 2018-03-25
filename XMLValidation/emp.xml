@@ -1,0 +1,29 @@
+<?xml version = "1.0"?>
+
+<employee>  
+   <emp id = "393">
+      <firstname>Dinkar</firstname>    
+      <lastname>Kad</lastname>
+      <nickname>Dinkar</nickname>
+      <salary>85</salary>	 
+   </emp>
+   
+   <emp id = "02">
+      <firstname>rajesh</firstname>    
+      <lastname>Kamalanathan</lastname>
+      <nickname>rockfort</nickname>
+      <salary>5400</salary>	 
+   </emp>
+   <emp id = "03">
+      <firstname>XXX</firstname>    
+      <lastname>YYY</lastname>
+      <nickname>xyz</nickname>
+      <salary>8533</salary>	 
+   </emp>
+   <emp id = "04">
+      <firstname>anoop</firstname>    
+      <lastname>kadny</lastname>
+      <nickname>anu</nickname>
+      <salary>5333</salary>	 
+   </emp>
+</employee>
